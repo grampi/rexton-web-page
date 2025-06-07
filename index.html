@@ -26,8 +26,6 @@
             --gradient-secondary: linear-gradient(135deg, #ff3e6f 0%, #ffab7f 100%);
             --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.1);
             --shadow-2: 0 20px 40px rgba(0, 0, 0, 0.2);
-            --glass: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
         }
 
         body {
@@ -39,14 +37,6 @@
         /* Ładowanie czcionek */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-        /* Glassmorphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-        }
 
         /* Nagłówek */
         header {
@@ -322,17 +312,6 @@
             overflow: hidden;
         }
 
-        .section-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.05;
-            background-size: cover;
-            background-position: center;
-        }
 
         .container {
             max-width: 1400px;
@@ -416,16 +395,6 @@
             object-fit: contain;
         }
 
-        .service-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: all 0.5s ease;
-        }
-
-        .service-card:hover .service-img {
-            transform: scale(1.1);
-        }
 
         .service-content {
             padding: 30px;
@@ -1086,17 +1055,6 @@
             font-size: 0.9rem;
         }
 
-        /* Zapewnij lepszą responsywność i dostosowanie do dotyku */
-        .btn,
-        .btn-outline,
-        .portfolio-filter,
-        form input,
-        form textarea,
-        form button,
-        nav ul li a,
-        .social-links a {
-            transition: all 0.3s ease;
-        }
 
         /* Optymalizacja dla dotyku na urządzeniach mobilnych */
         @media (max-width: 768px) {
@@ -1419,6 +1377,51 @@
                 font-size: 1.3rem;
             }
         }
+
+        /* Utility classes for inline styles */
+        .portfolio-icon {
+            font-size: 5rem;
+            color: rgba(255,255,255,0.2);
+        }
+
+        .portfolio-placeholder {
+            background: rgba(255,255,255,0.05);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-icon-style {
+            font-size: 2rem;
+        }
+
+        .hero-main-icon {
+            font-size: 22rem;
+            color: rgba(255,255,255,0.2);
+            text-align: center;
+            transform: rotate(-15deg);
+        }
+
+        .about-main-icon {
+            font-size: 10rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #ef233c;
+            margin-right: 15px;
+        }
+
+        .accent-text {
+            color: #ef233c;
+        }
+
+        .client-avatar {
+            color: white;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 
@@ -1432,7 +1435,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <i class="fas fa-rocket" style="font-size: 2.5rem; color: #ef233c; margin-right: 15px;"></i>
+                <i class="fas fa-rocket logo-icon" aria-hidden="true"></i>
                 <h1>REXTON</h1>
             </div>
             <div class="hamburger">
@@ -1463,23 +1466,22 @@
         </div>
         <div class="hero-content">
             <div class="hero-text">
-                <h2>Przyszłość zaczyna się <span style="color: #ef233c;">tutaj</span></h2>
+                <h2>Przyszłość zaczyna się <span class="accent-text">tutaj</span></h2>
                 <p>Rexton to innowacyjna firma, która pomaga biznesom przekształcać się w cyfrowe przedsiębiorstwa
                     przyszłości. Wykorzystujemy najnowsze technologie, aby tworzyć rozwiązania, które zmieniają zasady
                     gry.</p>
                 <a href="#contact" class="btn">Rozpocznij współpracę</a>
             </div>
         </div>
-        <div class="hero-image">
-            <div style="font-size: 22rem; color: rgba(255,255,255,0.2); text-align: center; transform: rotate(-15deg);">
-                <i class="fas fa-layer-group"></i>
+        <div class="hero-image" role="img" aria-label="Ilustracja przedstawiająca warstwy technologii">
+            <div class="hero-main-icon">
+                <i class="fas fa-layer-group" aria-hidden="true"></i>
             </div>
         </div>
     </section>
 
     <!-- Usługi -->
     <section id="services" class="services">
-        <div class="section-bg"></div>
         <div class="container">
             <div class="section-title">
                 <span class="section-subtitle">Co oferujemy</span>
@@ -1490,7 +1492,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-brain" style="font-size: 2rem;"></i>
+                        <i class="fas fa-brain service-icon-style" aria-hidden="true"></i>
                     </div>
                     <div class="service-content">
                         <h3>Sztuczna Inteligencja</h3>
@@ -1501,7 +1503,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-cloud" style="font-size: 2rem;"></i>
+                        <i class="fas fa-cloud service-icon-style" aria-hidden="true"></i>
                     </div>
                     <div class="service-content">
                         <h3>Cloud Computing</h3>
@@ -1512,7 +1514,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-network-wired" style="font-size: 2rem;"></i>
+                        <i class="fas fa-network-wired service-icon-style" aria-hidden="true"></i>
                     </div>
                     <div class="service-content">
                         <h3>Internet Rzeczy</h3>
@@ -1538,10 +1540,10 @@
                 <p>Jesteśmy zespołem pasjonatów technologii, którzy wierzą w moc innowacji i transformacji cyfrowej.</p>
             </div>
             <div class="about-content">
-                <div class="about-image"
-                    style="text-align: center; padding: 50px; background: rgba(255,255,255,0.05); border-radius: 20px; height: 400px; display: flex; align-items: center; justify-content: center;">
-                    <div style="font-size: 10rem; color: rgba(255,255,255,0.3);">
-                        <i class="fas fa-users"></i>
+                <div class="about-image portfolio-placeholder" role="img" aria-label="Ilustracja przedstawiająca zespół ludzi"
+                    style="text-align: center; padding: 50px; border-radius: 20px; height: 400px;">
+                    <div class="about-main-icon">
+                        <i class="fas fa-users" aria-hidden="true"></i>
                     </div>
                 </div>
                 <div class="about-text">
@@ -1589,9 +1591,8 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background: rgba(255,255,255,0.05); height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-brain" style="font-size: 5rem; color: rgba(255,255,255,0.2);"></i>
+                    <div class="portfolio-image portfolio-placeholder">
+                        <i class="fas fa-brain portfolio-icon" aria-hidden="true"></i>
                     </div>
                     <div class="portfolio-overlay">
                         <h3>System Predykcyjny AI</h3>
@@ -1600,9 +1601,8 @@
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background: rgba(255,255,255,0.05); height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-cloud" style="font-size: 5rem; color: rgba(255,255,255,0.2);"></i>
+                    <div class="portfolio-image portfolio-placeholder">
+                        <i class="fas fa-cloud portfolio-icon" aria-hidden="true"></i>
                     </div>
                     <div class="portfolio-overlay">
                         <h3>Platforma Cloud</h3>
@@ -1611,9 +1611,8 @@
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background: rgba(255,255,255,0.05); height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-network-wired" style="font-size: 5rem; color: rgba(255,255,255,0.2);"></i>
+                    <div class="portfolio-image portfolio-placeholder">
+                        <i class="fas fa-network-wired portfolio-icon" aria-hidden="true"></i>
                     </div>
                     <div class="portfolio-overlay">
                         <h3>Smart Factory IoT</h3>
@@ -1622,9 +1621,8 @@
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background: rgba(255,255,255,0.05); height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-shield-alt" style="font-size: 5rem; color: rgba(255,255,255,0.2);"></i>
+                    <div class="portfolio-image portfolio-placeholder">
+                        <i class="fas fa-shield-alt portfolio-icon" aria-hidden="true"></i>
                     </div>
                     <div class="portfolio-overlay">
                         <h3>System Cyberbezpieczeństwa</h3>
@@ -1633,9 +1631,8 @@
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background: rgba(255,255,255,0.05); height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-laptop-code" style="font-size: 5rem; color: rgba(255,255,255,0.2);"></i>
+                    <div class="portfolio-image portfolio-placeholder">
+                        <i class="fas fa-laptop-code portfolio-icon" aria-hidden="true"></i>
                     </div>
                     <div class="portfolio-overlay">
                         <h3>Digital Workplace</h3>
@@ -1644,9 +1641,8 @@
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background: rgba(255,255,255,0.05); height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-shopping-cart" style="font-size: 5rem; color: rgba(255,255,255,0.2);"></i>
+                    <div class="portfolio-image portfolio-placeholder">
+                        <i class="fas fa-shopping-cart portfolio-icon" aria-hidden="true"></i>
                     </div>
                     <div class="portfolio-overlay">
                         <h3>E-commerce AI</h3>
@@ -1675,7 +1671,7 @@
                     <div class="client-info">
                         <div class="client-image"
                             style="background: #3498db; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-user" style="color: white; font-size: 1.5rem;"></i>
+                            <i class="fas fa-user client-avatar" aria-hidden="true"></i>
                         </div>
                         <div class="client-details">
                             <h4>Jan Kowalski</h4>
