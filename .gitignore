@@ -1,0 +1,14 @@
+# Claude AI assistant files
+.claude/
+
+# IDE and Editor files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
